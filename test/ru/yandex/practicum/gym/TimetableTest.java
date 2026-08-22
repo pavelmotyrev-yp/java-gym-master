@@ -3,7 +3,8 @@ package ru.yandex.practicum.gym;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 public class TimetableTest {
 
@@ -108,10 +109,10 @@ public class TimetableTest {
         Assertions.assertEquals(2, thursdayResult.size());
         boolean isFirstEntry = true;
         for (TimeOfDay timeOfDay : thursdayResult.keySet()) {
-            if (isFirstEntry){
+            if (isFirstEntry) {
                 isFirstEntry = false;
                 Assertions.assertEquals(13, timeOfDay.getHours());
-            }else {
+            } else {
                 Assertions.assertEquals(20, timeOfDay.getHours());
             }
         }
@@ -159,7 +160,6 @@ public class TimetableTest {
                 DayOfWeek.MONDAY, new TimeOfDay(12, 0));
 
 
-
         timetable.addNewTrainingSession(firstTrainingSession);
         timetable.addNewTrainingSession(secondTrainingSession);
         timetable.addNewTrainingSession(trainingSession);
@@ -167,7 +167,7 @@ public class TimetableTest {
         List<CounterOfTrainings> counterOfTrainings = timetable.getCountByCoaches();
 
         Assertions.assertEquals(1, counterOfTrainings.size());
-        Assertions.assertEquals(3,counterOfTrainings.getFirst().getTrainingAmount());
+        Assertions.assertEquals(3, counterOfTrainings.getFirst().getTrainingAmount());
     }
 
     @Test
@@ -186,7 +186,6 @@ public class TimetableTest {
                 DayOfWeek.MONDAY, new TimeOfDay(12, 0));
 
 
-
         timetable.addNewTrainingSession(firstTrainingSession);
         timetable.addNewTrainingSession(secondTrainingSession);
         timetable.addNewTrainingSession(trainingSession);
@@ -194,7 +193,7 @@ public class TimetableTest {
         List<CounterOfTrainings> counterOfTrainings = timetable.getCountByCoaches();
 
         Assertions.assertEquals(1, counterOfTrainings.size());
-        Assertions.assertEquals(3,counterOfTrainings.getFirst().getTrainingAmount());
+        Assertions.assertEquals(3, counterOfTrainings.getFirst().getTrainingAmount());
     }
 
     @Test
@@ -240,8 +239,8 @@ public class TimetableTest {
         List<CounterOfTrainings> counterOfTrainings = timetable.getCountByCoaches();
 
         Assertions.assertEquals(3, counterOfTrainings.size());
-        Assertions.assertEquals(3,counterOfTrainings.getFirst().getTrainingAmount());
-        Assertions.assertEquals(1,counterOfTrainings.getLast().getTrainingAmount());
+        Assertions.assertEquals(3, counterOfTrainings.getFirst().getTrainingAmount());
+        Assertions.assertEquals(1, counterOfTrainings.getLast().getTrainingAmount());
     }
 
     @Test
